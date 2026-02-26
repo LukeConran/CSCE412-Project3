@@ -1,0 +1,30 @@
+#ifndef LOADBALANCER_H
+#define LOADBALANCER_H
+
+#include <string>
+#include "WebServer.h"
+#include "Request.h"
+#include <vector>
+#include <queue>
+
+class LoadBalancer {
+private:
+    std::vector<WebServer> servers;
+    int currentTime;
+    std::queue<Request> requestQueue;
+    std::vector<std::string> blockedPrefixes;
+public:
+    void step();
+    void addRequest(const Request& request);
+    Request generateRandomRequest();
+    void adjustServerCount();
+    void addServer();
+    void removeServer();
+    bool isBlocked(const std::string& ip);
+    void initializeQueue(int count);
+};
+
+
+
+
+#endif // LOADBALANCER_H
