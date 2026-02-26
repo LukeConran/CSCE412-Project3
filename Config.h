@@ -10,7 +10,7 @@ const int INITIAL_QUEUE_MULTIPLIER  = 100;
 
 const int MIN_QUEUE_PER_SERVER      = 50;
 const int MAX_QUEUE_PER_SERVER      = 80;
-const int SERVER_ADJUST_COOLDOWN    = 100;
+const int SERVER_ADJUST_COOLDOWN    = 10;
 
 const int NEW_REQUEST_INTERVAL      = 1;
 const int REQUEST_TIME_MIN          = 5;

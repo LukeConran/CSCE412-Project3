@@ -1,44 +1,34 @@
-[1m
+
 ===== Load Balancer Configuration =====
-[0m  Servers:              10
+  Servers:              10
   Simulation Time:      10000 cycles
   Initial Queue Size:   1000 requests
   Queue Min Threshold:  50 * servers
   Queue Max Threshold:  80 * servers
   Adjust Cooldown:      100 cycles
-  New Request Interval: 10 cycles
-  Request Time Range:   1 - 20 cycles
+  New Request Interval: 1 cycles
+  Request Time Range:   5 - 20 cycles
   Log File:             loadbalancer_log.txt
-  Blocked Prefixes:     192.168.1, 10.0.0, 172.16.5
+  Blocked Prefixes:     10.0.0, 123.43.21, 123.45.67
 ========================================
 
 [START] Simulation running for 10000 clock cycles.
 
-[CYCLE 1] SCALE UP → 11 servers | Queue: 990
-[CYCLE 102] SCALE UP → 12 servers | Queue: 901
-[CYCLE 384] SCALE DOWN → 11 servers | Queue: 598
-[CYCLE 485] SCALE DOWN → 10 servers | Queue: 515
-[CYCLE 586] SCALE DOWN → 9 servers | Queue: 419
-[CYCLE 687] SCALE DOWN → 8 servers | Queue: 333
-[CYCLE 788] SCALE DOWN → 7 servers | Queue: 272
-[CYCLE 889] SCALE DOWN → 6 servers | Queue: 204
-[CYCLE 990] SCALE DOWN → 5 servers | Queue: 157
-[CYCLE 1091] SCALE DOWN → 4 servers | Queue: 124
-[CYCLE 1192] SCALE DOWN → 3 servers | Queue: 96
-[CYCLE 1293] SCALE DOWN → 2 servers | Queue: 78
-[CYCLE 1394] SCALE DOWN → 1 servers | Queue: 72
-[CYCLE 2290] SCALE UP → 2 servers | Queue: 81
-[CYCLE 2391] SCALE DOWN → 1 servers | Queue: 69
-[CYCLE 8150] SCALE UP → 2 servers | Queue: 81
-[CYCLE 8251] SCALE DOWN → 1 servers | Queue: 68
+[CYCLE 1] SCALE UP → 11 servers | Queue: 991
+[CYCLE 102] SCALE UP → 12 servers | Queue: 991
+[CYCLE 203] SCALE UP → 13 servers | Queue: 978
+[CYCLE 1518] SCALE DOWN → 12 servers | Queue: 649
+[CYCLE 1869] SCALE DOWN → 11 servers | Queue: 599
+[CYCLE 2814] SCALE DOWN → 10 servers | Queue: 549
+[CYCLE 7299] SCALE UP → 11 servers | Queue: 801
 
-[1m============= SIMULATION SUMMARY =============
-[0m  Total Clock Cycles Run:     10000
-  Total Requests Generated:   2000
+============= SIMULATION SUMMARY =============
+  Total Clock Cycles Run:     10000
+  Total Requests Generated:   11000
   Total Requests Blocked:     0
-  Requests Processed:         2000
+  Requests Processed:         11000
   Scale-Up Events:            4
-  Scale-Down Events:          13
-  Final Server Count:         1
-  Remaining Queue Size:       68
+  Scale-Down Events:          3
+  Final Server Count:         11
+  Remaining Queue Size:       649
 ==============================================

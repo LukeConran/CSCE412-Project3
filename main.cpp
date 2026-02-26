@@ -15,7 +15,6 @@
 #define COLOR_CYAN    "\033[36m"
 #define COLOR_RED     "\033[31m"
 #define COLOR_MAGENTA "\033[35m"
-#define COLOR_BOLD    "\033[1m"
 
 int main() {
     srand(static_cast<unsigned int>(time(nullptr)));
@@ -28,7 +27,7 @@ int main() {
     }
 
     std::ostringstream cfgSummary;
-    cfgSummary << COLOR_BOLD << "\n===== Load Balancer Configuration =====\n" << COLOR_RESET
+    cfgSummary << "\n===== Load Balancer Configuration =====\n"
                << "  Servers:              " << NUM_SERVERS                                     << "\n"
                << "  Simulation Time:      " << SIMULATION_TIME                                 << " cycles\n"
                << "  Initial Queue Size:   " << NUM_SERVERS * INITIAL_QUEUE_MULTIPLIER          << " requests\n"
@@ -110,8 +109,8 @@ int main() {
     }
 
     std::ostringstream summary;
-    summary << "\n" << COLOR_BOLD
-            << "============= SIMULATION SUMMARY =============\n" << COLOR_RESET
+    summary << "\n"
+            << "============= SIMULATION SUMMARY =============\n"
             << "  Total Clock Cycles Run:     " << SIMULATION_TIME                                  << "\n"
             << "  Total Requests Generated:   " << totalRequestsGenerated                           << "\n"
             << "  Total Requests Blocked:     " << totalRequestsBlocked                             << "\n"
