@@ -22,6 +22,9 @@ public:
     void removeServer();
     bool isBlocked(const std::string& ip);
     void initializeQueue(int count);
+    int getServerCount() const { return (int)servers.size(); }
+    int getQueueSize() const { return (int)requestQueue.size(); }
+    void addBlockedPrefix(const std::string& prefix) { blockedPrefixes.push_back(prefix); }
 };
 
 
