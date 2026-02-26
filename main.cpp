@@ -47,6 +47,8 @@ int main() {
     std::cout << cfgSummary.str();
     log       << cfgSummary.str();
 
+    /////////////////////////////////////////////////////////////////////////////////////////////////
+
     LoadBalancer lb;
 
     for (const auto& prefix : BLOCKED_PREFIXES) {
@@ -70,14 +72,20 @@ int main() {
               << " Simulation starting for " << SIMULATION_TIME << " clock cycles...\n\n";
     log << "[START] Simulation running for " << SIMULATION_TIME << " clock cycles.\n\n";
 
+    //////////////////////////////////////////////////////////////////////////////////////////////////
+
     for (int cycle = 1; cycle <= SIMULATION_TIME; cycle++) {
 
         if (cycle % NEW_REQUEST_INTERVAL == 0) {
             Request r = lb.generateRandomRequest();
-            bool blocked = lb.isBlocked(r.ipIn);
-            lb.addRequest(r);
             totalRequestsGenerated++;
-            if (blocked) totalRequestsBlocked++;
+            if(!lb.addRequest(r)) {
+                totalRequestsBlocked++;
+                std::string msg = "[CYCLE " + std::to_string(cycle) + "] BLOCKED → "
+                                + r.ipIn + " | Queue: "
+                                + std::to_string(lb.getQueueSize()) + "\n";
+                log << msg;
+            }
         }
 
         lb.step();
@@ -107,6 +115,8 @@ int main() {
             }
         }
     }
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////
 
     std::ostringstream summary;
     summary << "\n"

@@ -5,30 +5,37 @@
   Initial Queue Size:   1000 requests
   Queue Min Threshold:  50 * servers
   Queue Max Threshold:  80 * servers
-  Adjust Cooldown:      100 cycles
-  New Request Interval: 1 cycles
+  Adjust Cooldown:      200 cycles
+  New Request Interval: 3 cycles
   Request Time Range:   5 - 20 cycles
   Log File:             loadbalancer_log.txt
-  Blocked Prefixes:     10.0.0, 123.43.21, 123.45.67
+  Blocked Prefixes:     192.16, 10.0., 187.15
 ========================================
 
 [START] Simulation running for 10000 clock cycles.
 
-[CYCLE 1] SCALE UP → 11 servers | Queue: 991
-[CYCLE 102] SCALE UP → 12 servers | Queue: 991
-[CYCLE 203] SCALE UP → 13 servers | Queue: 978
-[CYCLE 1518] SCALE DOWN → 12 servers | Queue: 649
-[CYCLE 1869] SCALE DOWN → 11 servers | Queue: 599
-[CYCLE 2814] SCALE DOWN → 10 servers | Queue: 549
-[CYCLE 7299] SCALE UP → 11 servers | Queue: 801
+[CYCLE 1] SCALE UP → 11 servers | Queue: 990
+[CYCLE 202] SCALE UP → 12 servers | Queue: 888
+[CYCLE 665] SCALE DOWN → 11 servers | Queue: 599
+[CYCLE 866] SCALE DOWN → 10 servers | Queue: 489
+[CYCLE 1067] SCALE DOWN → 9 servers | Queue: 398
+[CYCLE 1268] SCALE DOWN → 8 servers | Queue: 324
+[CYCLE 1469] SCALE DOWN → 7 servers | Queue: 267
+[CYCLE 1670] SCALE DOWN → 6 servers | Queue: 220
+[CYCLE 1871] SCALE DOWN → 5 servers | Queue: 191
+[CYCLE 2072] SCALE DOWN → 4 servers | Queue: 178
+[CYCLE 2273] SCALE DOWN → 3 servers | Queue: 178
+[CYCLE 2844] BLOCKED → 192.160.65.223 | Queue: 228
+[CYCLE 2997] SCALE UP → 4 servers | Queue: 241
+[CYCLE 7254] BLOCKED → 187.156.187.187 | Queue: 281
 
 ============= SIMULATION SUMMARY =============
   Total Clock Cycles Run:     10000
-  Total Requests Generated:   11000
-  Total Requests Blocked:     0
-  Requests Processed:         11000
-  Scale-Up Events:            4
-  Scale-Down Events:          3
-  Final Server Count:         11
-  Remaining Queue Size:       649
+  Total Requests Generated:   4333
+  Total Requests Blocked:     2
+  Requests Processed:         4331
+  Scale-Up Events:            3
+  Scale-Down Events:          9
+  Final Server Count:         4
+  Remaining Queue Size:       302
 ==============================================

@@ -20,11 +20,13 @@ void LoadBalancer::step() {
     }
 }
 
-void LoadBalancer::addRequest(const Request& request) {
+bool LoadBalancer::addRequest(const Request& request) {
     if (!isBlocked(request.ipIn)) {
         requestQueue.push(request);
+        return true;
     } else {
         std::cout << "\033[31m[BLOCKED]\033[0m Request from " << request.ipIn << " was denied.\n";
+        return false;
     }
 }
 
@@ -38,7 +40,7 @@ Request LoadBalancer::generateRandomRequest() {
     Request req;
     req.ipIn = randomIp();
     req.ipOut = randomIp();
-    req.time = rand() % 20 + 1;
+    req.time = rand() % (REQUEST_TIME_MAX - REQUEST_TIME_MIN + 1) + REQUEST_TIME_MIN;
     req.jobType = (rand() % 2 == 0) ? 'P' : 'S';
     return req;
 }
@@ -55,8 +57,7 @@ void LoadBalancer::adjustServerCount() {
 }
 
 void LoadBalancer::addServer() {
-    WebServer newServer;
-    servers.push_back(newServer);
+    servers.emplace_back((int)servers.size() + 1);
     std::cout << "\033[33m[SCALE UP]\033[0m Server added. Total servers: " << servers.size() << "\n";
 }
 

@@ -14,8 +14,9 @@ private:
     std::queue<Request> requestQueue;
     std::vector<std::string> blockedPrefixes;
 public:
+    LoadBalancer() : currentTime(0) {}
     void step();
-    void addRequest(const Request& request);
+    bool addRequest(const Request& request);
     Request generateRandomRequest();
     void adjustServerCount();
     void addServer();

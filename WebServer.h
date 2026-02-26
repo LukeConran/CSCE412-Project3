@@ -11,6 +11,7 @@ private:
     int serverId;
 
 public:
+    WebServer(int id) : busy(false), remainingTime(0), serverId(id) {}
     void startRequest(Request& request);
     bool isFinished();
     void iterate();
