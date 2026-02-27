@@ -9,6 +9,11 @@
 #include "Request.h"
 #include "Config.h"
 
+/**
+ * @file main.cpp
+ * @brief Runs the load balancer simulation and writes event logs and summary output.
+ */
+
 #define COLOR_RESET   "\033[0m"
 #define COLOR_GREEN   "\033[32m"
 #define COLOR_YELLOW  "\033[33m"
@@ -16,6 +21,14 @@
 #define COLOR_RED     "\033[31m"
 #define COLOR_MAGENTA "\033[35m"
 
+/**
+ * @brief Program entry point for the load balancer simulation.
+ *
+ * Initializes configuration, creates the server pool, runs simulation cycles,
+ * applies request generation and dynamic scaling, and writes results to the log.
+ *
+ * @return 0 on success, non-zero when log initialization fails.
+ */
 int main() {
     srand(static_cast<unsigned int>(time(nullptr)));
 
@@ -35,7 +48,7 @@ int main() {
                << "  Queue Max Threshold:  " << MAX_QUEUE_PER_SERVER                            << " * servers\n"
                << "  Adjust Cooldown:      " << SERVER_ADJUST_COOLDOWN                          << " cycles\n"
                << "  New Request Interval: " << NEW_REQUEST_INTERVAL                            << " cycles\n"
-               << "  Request Time Range:   " << REQUEST_TIME_MIN << " - " << REQUEST_TIME_MAX   << " cycles\n"
+               << "  Range For Task Times: " << REQUEST_TIME_MIN << " - " << REQUEST_TIME_MAX   << " cycles\n"
                << "  Log File:             " << LOG_FILE                                        << "\n"
                << "  Blocked Prefixes:     ";
     for (size_t i = 0; i < BLOCKED_PREFIXES.size(); i++) {

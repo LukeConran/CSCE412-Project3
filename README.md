@@ -44,8 +44,6 @@ Key behaviors:
 - **Blocking:** when a request is added, its `ipIn` is checked against the blocked prefix list; blocked requests are denied and not enqueued.
 - **Initialization:** the queue can be pre-filled with an initial batch of random requests.
 
-> Note: `LoadBalancer.cpp` includes an `adjustServerCount()` method implementing scale-up/scale-down logic based on queue thresholds, but your main loop determines when/if it’s invoked.
-
 ## Configuration (`Config.h`)
 
 Simulation parameters are compile-time constants in `Config.h`, including:
@@ -102,9 +100,3 @@ A copy of the configuration summary (and other log output written by `main.cpp`)
 - `Request.h`: request data structure.
 - `Config.h`: compile-time simulation constants.
 - `Makefile`: build rules for the `loadbalancer` executable.
-
-## Notes / possible improvements
-
-- `adjustServerCount()` exists but should be called from the simulation loop at an interval and with cooldown handling if you want automatic scaling to occur during runtime.
-- `WebServer` declares `serverId` but it is not currently used; assigning IDs would improve logging/debug output.
-- `Request::time` generation in `LoadBalancer.cpp` is currently `1..20`; if you want it to match `Config.h` (`REQUEST_TIME_MIN..REQUEST_TIME_MAX`), update the generator to use those constants.

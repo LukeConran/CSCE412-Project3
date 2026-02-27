@@ -7,35 +7,38 @@
   Queue Max Threshold:  80 * servers
   Adjust Cooldown:      200 cycles
   New Request Interval: 3 cycles
-  Request Time Range:   5 - 20 cycles
+  Range For Task Times: 5 - 20 cycles
   Log File:             loadbalancer_log.txt
   Blocked Prefixes:     192.16, 10.0., 187.15
 ========================================
 
 [START] Simulation running for 10000 clock cycles.
 
-[CYCLE 1] SCALE UP → 11 servers | Queue: 990
-[CYCLE 202] SCALE UP → 12 servers | Queue: 888
-[CYCLE 665] SCALE DOWN → 11 servers | Queue: 599
-[CYCLE 866] SCALE DOWN → 10 servers | Queue: 489
-[CYCLE 1067] SCALE DOWN → 9 servers | Queue: 398
-[CYCLE 1268] SCALE DOWN → 8 servers | Queue: 324
-[CYCLE 1469] SCALE DOWN → 7 servers | Queue: 267
-[CYCLE 1670] SCALE DOWN → 6 servers | Queue: 220
-[CYCLE 1871] SCALE DOWN → 5 servers | Queue: 191
-[CYCLE 2072] SCALE DOWN → 4 servers | Queue: 178
-[CYCLE 2273] SCALE DOWN → 3 servers | Queue: 178
-[CYCLE 2844] BLOCKED → 192.160.65.223 | Queue: 228
-[CYCLE 2997] SCALE UP → 4 servers | Queue: 241
-[CYCLE 7254] BLOCKED → 187.156.187.187 | Queue: 281
+[CYCLE 1] SCALE UP → 11 servers | Queue: 989
+[CYCLE 202] SCALE UP → 12 servers | Queue: 884
+[CYCLE 667] SCALE DOWN → 11 servers | Queue: 599
+[CYCLE 868] SCALE DOWN → 10 servers | Queue: 482
+[CYCLE 1069] SCALE DOWN → 9 servers | Queue: 384
+[CYCLE 1270] SCALE DOWN → 8 servers | Queue: 314
+[CYCLE 1471] SCALE DOWN → 7 servers | Queue: 256
+[CYCLE 1672] SCALE DOWN → 6 servers | Queue: 212
+[CYCLE 1873] SCALE DOWN → 5 servers | Queue: 182
+[CYCLE 2034] BLOCKED → 187.150.8.107 | Queue: 171
+[CYCLE 2074] SCALE DOWN → 4 servers | Queue: 167
+[CYCLE 2275] SCALE DOWN → 3 servers | Queue: 169
+[CYCLE 3093] SCALE UP → 4 servers | Queue: 241
+[CYCLE 4338] BLOCKED → 187.150.206.177 | Queue: 241
+[CYCLE 5235] BLOCKED → 192.168.18.221 | Queue: 255
+[CYCLE 8865] SCALE UP → 5 servers | Queue: 321
+[CYCLE 9974] SCALE DOWN → 4 servers | Queue: 249
 
 ============= SIMULATION SUMMARY =============
   Total Clock Cycles Run:     10000
   Total Requests Generated:   4333
-  Total Requests Blocked:     2
-  Requests Processed:         4331
-  Scale-Up Events:            3
-  Scale-Down Events:          9
+  Total Requests Blocked:     3
+  Requests Processed:         4330
+  Scale-Up Events:            4
+  Scale-Down Events:          10
   Final Server Count:         4
-  Remaining Queue Size:       302
+  Remaining Queue Size:       250
 ==============================================
