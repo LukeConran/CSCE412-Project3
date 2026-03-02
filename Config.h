@@ -21,14 +21,14 @@ const int MIN_QUEUE_PER_SERVER      = 50;
 /** @brief Upper queue threshold per server used to trigger scale-up checks. */
 const int MAX_QUEUE_PER_SERVER      = 80;
 /** @brief Cooldown cycles between successive scaling actions. */
-const int SERVER_ADJUST_COOLDOWN    = 200;
+const int SERVER_ADJUST_COOLDOWN    = 50;
 
 /** @brief Number of cycles between random request generation events. */
-const int NEW_REQUEST_INTERVAL      = 3;
+const int NEW_REQUEST_INTERVAL      = 1;
 /** @brief Minimum processing time assigned to generated requests. */
-const int REQUEST_TIME_MIN          = 5;
+const int REQUEST_TIME_MIN          = 3;
 /** @brief Maximum processing time assigned to generated requests. */
-const int REQUEST_TIME_MAX          = 20;
+const int REQUEST_TIME_MAX          = 17;
 
 /** @brief Output log file path for simulation events and summary data. */
 const std::string LOG_FILE  = "loadbalancer_log.txt";
