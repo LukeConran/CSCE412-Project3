@@ -14,25 +14,27 @@
 
 [START] Simulation running for 10000 clock cycles.
 
-[CYCLE 1] SCALE UP → 11 servers | Queue: 991
-[CYCLE 52] SCALE UP → 12 servers | Queue: 989
-[CYCLE 103] SCALE UP → 13 servers | Queue: 976
-[CYCLE 1096] SCALE DOWN → 12 servers | Queue: 649
-[CYCLE 1300] BLOCKED → 187.153.230.232 | Queue: 616
-[CYCLE 1392] SCALE DOWN → 11 servers | Queue: 599
-[CYCLE 1827] SCALE DOWN → 10 servers | Queue: 549
-[CYCLE 1885] BLOCKED → 187.152.144.13 | Queue: 550
-[CYCLE 2669] BLOCKED → 192.165.154.162 | Queue: 555
-[CYCLE 8710] BLOCKED → 187.156.81.136 | Queue: 570
-[CYCLE 9499] BLOCKED → 192.162.144.135 | Queue: 585
+[CYCLE 1] SCALE UP → 11 servers | Queue: 990
+[CYCLE 52] SCALE UP → 12 servers | Queue: 987
+[CYCLE 103] SCALE UP → 13 servers | Queue: 975
+[CYCLE 1225] SCALE DOWN → 12 servers | Queue: 648
+[CYCLE 1455] SCALE DOWN → 11 servers | Queue: 597
+[CYCLE 1755] SCALE DOWN → 10 servers | Queue: 549
+[CYCLE 2115] BLOCKED → 192.162.86.247 | Queue: 540
+[CYCLE 4076] BLOCKED → 192.160.221.50 | Queue: 573
+[CYCLE 4729] BLOCKED → 187.153.74.212 | Queue: 529
+[CYCLE 6159] SCALE DOWN → 9 servers | Queue: 499
+[CYCLE 8336] SCALE UP → 10 servers | Queue: 721
+[CYCLE 8442] BLOCKED → 187.155.109.165 | Queue: 723
+[CYCLE 8568] BLOCKED → 187.150.100.122 | Queue: 722
 
 ============= SIMULATION SUMMARY =============
   Total Clock Cycles Run:     10000
   Total Requests Generated:   11000
   Total Requests Blocked:     5
   Requests Processed:         10995
-  Scale-Up Events:            3
-  Scale-Down Events:          3
+  Scale-Up Events:            4
+  Scale-Down Events:          4
   Final Server Count:         10
-  Remaining Queue Size:       586
+  Remaining Queue Size:       732
 ==============================================

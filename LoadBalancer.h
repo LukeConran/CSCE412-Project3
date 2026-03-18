@@ -19,17 +19,12 @@ class LoadBalancer {
 private:
     /** @brief Pool of active web servers. */
     std::vector<WebServer> servers;
-    /** @brief Simulation time tracker (reserved for cycle-based state). */
-    int currentTime;
     /** @brief FIFO queue of pending requests awaiting service. */
     std::queue<Request> requestQueue;
     /** @brief List of blocked source IP prefixes. */
     std::vector<std::string> blockedPrefixes;
+    
 public:
-
-    /** @brief Constructs an empty load balancer. */
-    LoadBalancer() : currentTime(0) {}
-
     /** @brief Advances all scheduling and server execution by one cycle. */
     void step();
 

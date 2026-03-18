@@ -19,15 +19,13 @@ private:
     bool busy;
     /** @brief Remaining cycles until the current request is complete. */
     int remainingTime;
-    /** @brief Stable identifier for this server instance. */
-    int serverId;
 
 public:
     /**
      * @brief Constructs a server with a specific identifier.
      * @param id Unique identifier for the server.
      */
-    WebServer(int id) : busy(false), remainingTime(0), serverId(id) {}
+    WebServer(int id) : busy(false), remainingTime(0) {}
 
     /**
      * @brief Assigns a request to the server and begins processing.
